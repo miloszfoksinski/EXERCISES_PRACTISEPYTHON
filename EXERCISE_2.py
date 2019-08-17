@@ -24,4 +24,4 @@ check = int(input('Write check number to check num: '))
 if (num%check == 0):
     print('Your check divides evenly into num')
 else :
-    print(' Your check doesn\'t divides evenly into num')
+    print(' Your check doesn\'t divides evenly into num.')
