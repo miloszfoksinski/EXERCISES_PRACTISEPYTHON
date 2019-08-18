@@ -1,12 +1,13 @@
 import requests
 from bs4 import BeautifulSoup
+import lxml
 
-base_url = 'http://www.nytimes.com'
-r = requests.get(base_url)
-soup = BeautifulSoup(r.text)
+link = 'http://www.nytimes.com/'
+get_link = requests.get(link)
+get_html = get_link.text
 
-for story_heading in soup.find_all(class_="balancedHeadline"):
-    if story_heading.a:
-        print(story_heading.a.text.replace("\n", " ").strip())
-    else:
-        print(story_heading.contents[0].strip())
+get_soup = BeautifulSoup(get_html,features="html.parsel")
+get_titles = get_soup.find_all(class =="balancedHeadline")
+
+for line in lines:
+    print(title.text)
